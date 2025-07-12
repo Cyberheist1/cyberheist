@@ -1,0 +1,68 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependency directories
+node_modules/
+.pnpm/
+jspm_packages/
+
+# Build output
+dist/
+build/
+dist-ssr/
+.next/
+out/
+.coverage/
+
+# Supabase configuration
+.supabase/
+supabase/migrations/
+
+# Environment variables
+.env
+.env.*.local
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Firebase/Cloud Functions (if used)
+.firebase/
+functions/node_modules/
+
+# Editor & OS generated files
+.vscode/
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Optional: Ignore test coverage or temp
+coverage/
+tmp/
+.cache/
+.cache-loader/
+
+# Optional: Ignore TypeScript build artifacts
+*.tsbuildinfo
+
+# Optional: Ignore system artifacts
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Optional: Ignore package lock files (if not using them in CI)
+# Uncomment if needed
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
