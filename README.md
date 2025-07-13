@@ -250,9 +250,8 @@ This project is fully compliant with [FOSS United](https://fossunited.org/) prin
 
 ## 👥 Team
 
-- **Lead Developer**: [Your Name]
-- **UI/UX Designer**: [Designer Name]
-- **Game Developer**: [Game Dev Name]
+- **Lead Developer**: Rashi Dwivedi
+- **Game Developer**: Kushagra Dwivedi
 
 ## 🏆 Hackathon Submission
 
