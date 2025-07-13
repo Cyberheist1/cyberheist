@@ -16,7 +16,7 @@ import { Auth } from './pages/Auth';
 import { AuthProvider } from './contexts/AuthContext';
 import KidsGames from './pages/KidsGames';
 import CertificatePage from './pages/CertficatePage';
-
+import RetroAuthGate from './pages/RetroAuthGate';
 
 function App() {
   return (
@@ -24,7 +24,8 @@ function App() {
     <Router>
           <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<RetroAuthGate />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/games" element={<QuickGame />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/auth" element={<Auth />} />
