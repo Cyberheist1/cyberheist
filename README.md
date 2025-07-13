@@ -26,16 +26,19 @@ This project perfectly embodies the hackathon theme by:
 ### 🎮 Game Categories
 
 #### 🔴 Hacker-Themed Games
-- **Digital Fortress Breach**: Navigate through security systems
-- **Encryption Decoder**: Crack codes and solve puzzles
-- **Terminal Hacking**: Command-line style challenges
-- **Cybersecurity Missions**: Learn security concepts through gameplay
+- **CipherGame**: Decode encrypted messages and crack secret codes
+- **ForensicsGame**: Digital forensics challenges and evidence analysis
+- **ReverseGame**: Reverse engineering puzzles and logic challenges
+- **LogicalPuzzle**: Complex problem-solving with cybersecurity themes
 
 #### 👶 Educational Games for Kids
-- **Code Breaker Junior**: Age-appropriate coding challenges
-- **Cyber Safety Adventures**: Learn online safety through fun activities
-- **Digital Citizenship Quest**: Understanding responsible technology use
-- **Logic Puzzle Games**: Develop problem-solving skills
+- **MemoryGame**: Classic memory matching with cyber-themed cards
+- **MemoryMath**: Mathematical challenges to boost cognitive skills
+- **MathRace**: Fast-paced arithmetic competitions
+- **WordScramble**: Vocabulary building with technology terms
+- **SentenceGame**: Language learning through interactive sentences
+- **TypingGame**: Improve typing speed with coding-themed content
+- **FillBlanks**: Complete programming concepts and cyber terminology
 
 #### 🚀 Featured Mission: Spaceship Battle
 - **CyberHeist Battleship Strike**: Tactical warfare simulation
@@ -43,27 +46,40 @@ This project perfectly embodies the hackathon theme by:
 - Sink enemy ships in this classic battle combat simulation
 - Modern graphics with retro gameplay mechanics
 
-### 💬 Real-Time Communication
-- **Secure Chat System**: Currently basic chat functionality
-- **Future Enhancement**: Socket.io integration for real-time messaging
-- **Encrypted Communications**: Themed around secure hacker communications
+#### 🎯 Quick Games & Challenges
+- **QuickGame**: Fast-paced mini-challenges for quick entertainment
+- **MiscGame**: Various puzzle games and brain teasers
 
-### 🔐 Authentication & Security
-- **Google Sign-In**: Seamless authentication experience
-- **Supabase Integration**: Secure user management and data storage
-- **Session Management**: Secure user sessions and data persistence
+### 🎮 Core Features
+
+#### 🎯 Game Management System
+- **Home Page**: Central hub for all gaming activities
+- **KidsGames**: Dedicated section for educational children's games
+- **QuickGame**: Fast access to mini-challenges and puzzles
+- **LeaderBoard**: Global rankings and achievement tracking
+
+#### 🔐 Authentication & User Management
+- **RetroAuthGate**: Cyberpunk-themed authentication interface
+- **Google Sign-In**: Seamless third-party authentication
+- **ProfilePage**: User profile management and statistics
+- **Auth Context**: Centralized authentication state management
+
+#### 🏆 Achievement System
+- **Certificate**: Digital certificates for completed challenges
+- **CertificatePage**: Showcase earned achievements and skills
+- **Progress Tracking**: Monitor learning progress across all games
 
 ## 🛠️ Technology Stack
 
 ### Frontend
-- **React 18**: Modern component-based architecture
-- **CSS3**: Custom styling with cyberpunk themes
-- **JavaScript ES6+**: Modern JavaScript features
-- **Responsive Design**: Mobile-first approach
+- **React 18**: Modern component-based architecture with TypeScript
+- **TypeScript**: Type-safe development and better code quality
+- **CSS3**: Custom styling with cyberpunk themes and responsive design
+- **Vite**: Fast build tool and development server
 
 ### Backend & Database
 - **Supabase**: 
-  - PostgreSQL database
+  - PostgreSQL database with type definitions
   - Real-time subscriptions
   - Authentication management
   - Row Level Security (RLS)
@@ -71,6 +87,7 @@ This project perfectly embodies the hackathon theme by:
 ### Authentication
 - **Google OAuth**: Secure third-party authentication
 - **Supabase Auth**: User management and session handling
+- **AuthContext**: Centralized authentication state management
 
 ### Future Integrations
 - **Socket.io**: Real-time chat functionality
@@ -83,6 +100,7 @@ This project perfectly embodies the hackathon theme by:
 - npm or yarn
 - Supabase account
 - Google OAuth credentials
+- TypeScript knowledge (recommended)
 
 ### Installation
 
@@ -100,23 +118,24 @@ This project perfectly embodies the hackathon theme by:
 3. **Environment Setup**
    Create a `.env` file in the root directory:
    ```env
-   REACT_APP_SUPABASE_URL=your_supabase_url
-   REACT_APP_SUPABASE_ANON_KEY=your_supabase_anon_key
-   REACT_APP_GOOGLE_CLIENT_ID=your_google_client_id
+   VITE_SUPABASE_URL=your_supabase_url
+   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+   VITE_GOOGLE_CLIENT_ID=your_google_client_id
    ```
 
 4. **Database Setup**
    - Create a new Supabase project
-   - Run the provided SQL migrations in `/database/migrations`
-   - Configure authentication providers
+   - Set up the database schema for user profiles, game scores, and achievements
+   - Configure Google OAuth in Supabase authentication settings
+   - Update the `supabase.ts` types file if needed
 
 5. **Start the development server**
    ```bash
-   npm start
+   npm run dev
    ```
 
 6. **Open your browser**
-   Navigate to `http://localhost:3000`
+   Navigate to `http://localhost:5173` (Vite default port)
 
 ## 🎨 Design Philosophy
 
@@ -136,21 +155,46 @@ This project perfectly embodies the hackathon theme by:
 
 ```
 cyberheist/
-├── public/
-│   ├── index.html
-│   └── assets/
+├── node_modules/
 ├── src/
 │   ├── components/
-│   │   ├── games/
-│   │   ├── chat/
-│   │   └── auth/
+│   │   ├── Certificate.tsx
+│   │   └── Navbar.tsx
+│   ├── contexts/
+│   │   └── AuthContext.tsx
+│   ├── games/
+│   │   ├── CipherGame.tsx
+│   │   ├── FillBlanks.tsx
+│   │   ├── ForensicsGame.tsx
+│   │   ├── LogicalPuzzle.tsx
+│   │   ├── MathRace.tsx
+│   │   ├── MemoryGame.tsx
+│   │   ├── MemoryMath.tsx
+│   │   ├── MiscGame.tsx
+│   │   ├── ReverseGame.tsx
+│   │   ├── SentenceGame.tsx
+│   │   ├── TypingGame.tsx
+│   │   └── WordScramble.tsx
+│   ├── lib/
+│   │   └── supabaseClient.ts
 │   ├── pages/
-│   ├── hooks/
-│   ├── utils/
-│   └── styles/
-├── database/
-│   └── migrations/
-└── docs/
+│   │   ├── Auth.tsx
+│   │   ├── CertificatePage.tsx
+│   │   ├── Home.tsx
+│   │   ├── KidsGames.tsx
+│   │   ├── LeaderBoard.tsx
+│   │   ├── LoginPage.tsx
+│   │   ├── ProfilePage.tsx
+│   │   ├── QuickGame.tsx
+│   │   ├── RetroAuthGate.tsx
+│   │   └── SignupPage.tsx
+│   ├── types/
+│   │   └── supabase.ts
+│   ├── App.css
+│   ├── App.tsx
+│   ├── index.css
+│   └── main.tsx
+└── package.json
 ```
 
 ## 🎯 Future Roadmap
@@ -224,10 +268,8 @@ This project perfectly captures the essence of retro gaming while showcasing mod
 
 ## 📞 Contact & Support
 
-- **Email**: support@cyberheist.com
+- **Email**: rashidwivedi1812@gmail.com
 - **GitHub Issues**: [Report bugs or request features](https://github.com/yourusername/cyberheist/issues)
-- **Discord**: Join our community server
-- **Twitter**: [@CyberHeistGame](https://twitter.com/cyberheistgame)
 
 ## 🙏 Acknowledgments
 
